@@ -7,7 +7,7 @@ public class ExitButton : MonoBehaviour
 
     void Start()
     {
-        gameObject.GetComponent<Button>().onClick.AddListener(OnClickExit);
+        GetComponent<Button>().onClick.AddListener(OnClickExit);
     }
 
     #endregion
