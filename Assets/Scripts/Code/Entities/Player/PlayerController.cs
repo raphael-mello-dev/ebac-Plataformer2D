@@ -1,13 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+[RequireComponent (typeof(PlayerRotationBehavior))]
 
 public class PlayerController : MonoBehaviour
 {
-    protected PlayerInputManager _inputManagerInstance;
+    #region Player Input Manager instance
+
+    protected PlayerInputManager inputManagerInstance;
+
+    #endregion
+
+    #region Player Setup
 
     private void Awake()
     {
-        _inputManagerInstance = new PlayerInputManager();
+        inputManagerInstance = new PlayerInputManager();
     }
+
+    #endregion
 }
