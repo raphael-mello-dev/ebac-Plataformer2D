@@ -13,6 +13,7 @@ public class PlayerInputManager
     #region Player Input Actions
 
     public Vector2 movement => playerControls.Gameplay.Walk.ReadValue<Vector2>();
+    public float isRunning => playerControls.Gameplay.Run.ReadValue<float>();
 
     public event Action OnRun;
     public event Action OnJump;

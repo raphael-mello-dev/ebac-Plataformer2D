@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent (typeof(PlayerRotationBehavior))]
+[RequireComponent(typeof(PlayerMovementBehavior))]
 
 public class PlayerController : MonoBehaviour
 {
