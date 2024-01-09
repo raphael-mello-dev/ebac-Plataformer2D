@@ -28,6 +28,12 @@ public class GameEvent : ScriptableObject
 
     #region Function to Raise all Events
 
+    public void RaiseEvent()
+    {
+        for (int i = listeners.Count - 1; i >= 0; i--)
+            listeners[i].OnEventRaised();
+    }
+
     public void RaiseEvent(Component sender, object data)
     {
         for (int i = listeners.Count - 1; i >= 0; i--)

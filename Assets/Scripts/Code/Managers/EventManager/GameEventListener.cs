@@ -14,7 +14,9 @@ public class GameEventListener : MonoBehaviour
 
     #region GameEvent Response
 
-    public CustomGameEvent response;
+    public UnityEvent response;
+
+    public CustomGameEvent customResponse;
 
     #endregion
 
@@ -32,11 +34,16 @@ public class GameEventListener : MonoBehaviour
 
     #endregion
 
-    #region Function to Raise an Event
+    #region Functions to Raise an Event
+
+    public void OnEventRaised()
+    {
+        response?.Invoke();
+    }
 
     public void OnEventRaised(Component sender, object data)
     {
-        response?.Invoke(sender, data);
+        customResponse?.Invoke(sender, data);
     }
 
     #endregion
