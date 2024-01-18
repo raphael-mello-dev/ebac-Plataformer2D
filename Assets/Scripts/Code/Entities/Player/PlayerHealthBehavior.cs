@@ -1,15 +1,8 @@
 using UnityEngine;
 
-public class PlayerHealthBehavior : MonoBehaviour
+public class PlayerHealthBehavior : PlayerController
 {
     public GameEvent OnPlayerDamaged;
-
-    public PlayerHealthData playerHealth;
-
-    void Start()
-    {
-        Debug.Log($"Max Health: {playerHealth._maxHealth} / Current Health: {playerHealth._currentHealth}");
-    }
 
     private void Update()
     {
@@ -18,4 +11,14 @@ public class PlayerHealthBehavior : MonoBehaviour
             OnPlayerDamaged.RaiseEvent(this, 2);
         }
     }
+
+    #region Player killed animation function
+
+    public void KilledAnimation()
+    {
+        _playerAnim = FindAnyObjectByType<PlayerController>().gameObject.GetComponent<Animator>();
+        _playerAnim.SetTrigger("IsDead");
+    }
+
+    #endregion
 }

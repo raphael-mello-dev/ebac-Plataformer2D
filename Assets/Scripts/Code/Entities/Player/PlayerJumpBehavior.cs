@@ -35,7 +35,20 @@ public class PlayerJumpBehavior : PlayerController
     private void OnJump()
     {
         rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+        _playerAnim.SetTrigger("IsJumping");
     }
 
     #endregion
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+            _playerAnim.SetTrigger("OnFloor");
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+            _playerAnim.ResetTrigger("OnFloor");
+    }
 }

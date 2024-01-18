@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerHealthData
   m_EditorClassIdentifier: 
   _maxHealth: 10
-  _currentHealth: 2
+  _currentHealth: 10
   OnPlayerKilled: {fileID: 11400000, guid: 089e9c70cc252994fb4c7be7798c32c0, type: 2}

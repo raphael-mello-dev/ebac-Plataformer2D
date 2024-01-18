@@ -16,9 +16,19 @@ public class PlayerHealthData : ScriptableObject
 
     #endregion
 
+    #region Damage variable
+
     private int damage;
 
+    #endregion
+
+    #region Player Killed Event
+
     public GameEvent OnPlayerKilled;
+
+    #endregion
+
+    #region Player taking damage function
 
     public void OnDamageTaken(Component sender, object data)
     {
@@ -41,9 +51,15 @@ public class PlayerHealthData : ScriptableObject
             OnPlayerKilled.RaiseEvent();
     }
 
+    #endregion
+
+    #region Player Killed function
+
     public void OnKilled()
     {
         Debug.Log("Game Over");
-        Destroy(GameObject.FindAnyObjectByType<PlayerController>().gameObject, 1.5f);
+        //Destroy(GameObject.FindAnyObjectByType<PlayerController>().gameObject, 1.5f);
     }
+
+    #endregion
 }
