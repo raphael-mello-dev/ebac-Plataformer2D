@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 9006532279719967539}
   m_Layer: 0
   m_Name: PFB_Astronaut
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1025,8 +1025,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: 2.37}
+  m_Size: {x: 3.03, y: 5.4}
   m_Direction: 0
 --- !u!114 &5811361338060099544
 MonoBehaviour:
@@ -1093,7 +1093,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnPlayerDamaged: {fileID: 0}
-  playerHealth: {fileID: 0}
 --- !u!1001 &2987335437580250577
 PrefabInstance:
   m_ObjectHideFlags: 0
