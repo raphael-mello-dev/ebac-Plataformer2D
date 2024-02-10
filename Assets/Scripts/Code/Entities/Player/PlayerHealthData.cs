@@ -3,32 +3,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PlayerData")]
 public class PlayerHealthData : ScriptableObject
 {
-
-    #region Player Max Health
-
     public int _maxHealth;
-
-    #endregion
-
-    #region Player Current Health
 
     public int _currentHealth;
 
-    #endregion
-
-    #region Damage variable
-
     private int damage;
 
-    #endregion
-
-    #region Player Killed Event
-
     public GameEvent OnPlayerKilled;
-
-    #endregion
-
-    #region Player taking damage function
 
     public void OnDamageTaken(Component sender, object data)
     {
@@ -51,15 +32,9 @@ public class PlayerHealthData : ScriptableObject
             OnPlayerKilled.RaiseEvent();
     }
 
-    #endregion
-
-    #region Player Killed function
-
     public void OnKilled()
     {
         Debug.Log("Game Over");
         //Destroy(GameObject.FindAnyObjectByType<PlayerController>().gameObject, 1.5f);
     }
-
-    #endregion
 }
