@@ -4,23 +4,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputManager
 {
-    #region Player Controls instance
-
     private PlayerControls playerControls;
-
-    #endregion
-
-    #region Player Input Actions
 
     public Vector2 movement => playerControls.Gameplay.Walk.ReadValue<Vector2>();
     public float isRunning => playerControls.Gameplay.Run.ReadValue<float>();
+    public float isShooting => playerControls.Gameplay.Shoot.ReadValue<float>();
 
     public event Action OnRun;
     public event Action OnJump;
-
-    #endregion
-
-    #region Player Input Manager Constructor
+    public event Action OnShoot;
 
     public PlayerInputManager()
     {
@@ -30,11 +22,8 @@ public class PlayerInputManager
 
         playerControls.Gameplay.Run.performed += RunPerformed;
         playerControls.Gameplay.Jump.performed += JumpPerformed;
+        playerControls.Gameplay.Shoot.performed += ShootPerformed;
     }
-
-    #endregion
-
-    #region Player Input Invoke functions
 
     private void RunPerformed(InputAction.CallbackContext context)
     {
@@ -46,5 +35,8 @@ public class PlayerInputManager
         OnJump?.Invoke();
     }
 
-    #endregion
+    private void ShootPerformed(InputAction.CallbackContext context)
+    {
+        OnShoot?.Invoke();
+    }
 }
