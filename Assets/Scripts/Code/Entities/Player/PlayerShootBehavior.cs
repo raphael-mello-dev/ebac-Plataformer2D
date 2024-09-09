@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerShootBehavior : PlayerController
 {
+    [SerializeField] private PoolManager poolManager;
+
+    [SerializeField] private Transform shotPoint;
+
     void Start()
     {
         inputManagerInstance.OnShoot += OnShoot;
@@ -16,7 +20,7 @@ public class PlayerShootBehavior : PlayerController
 
     private void OnShoot()
     {
-        
+        Invoke(nameof(OnShotStart), 0.75f);
     }
 
     private void ShotAnimation()
@@ -28,5 +32,11 @@ public class PlayerShootBehavior : PlayerController
         }
         else
             _playerAnim.SetBool("IsShooting", false);
+    }
+
+    private void OnShotStart()
+    {
+        var obj = poolManager.GetPooledObjects();
+        obj.SetActive(true);
     }
 }

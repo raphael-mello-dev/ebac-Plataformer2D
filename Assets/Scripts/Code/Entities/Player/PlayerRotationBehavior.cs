@@ -1,7 +1,14 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerRotationBehavior : PlayerController
 {
+    public quaternion PlayerRotation
+    {
+        private set { PlayerRotation = transform.rotation; }
+        get { return transform.rotation; }
+    }
+
     #region Rotation update
 
     void Update()

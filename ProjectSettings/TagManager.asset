@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Shot_Point
   layers:
   - Default
   - TransparentFX

@@ -135,7 +135,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""1b9c7575-6c33-41e3-ab78-cd5df52d0c26"",
                     ""path"": ""<Keyboard>/z"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",
