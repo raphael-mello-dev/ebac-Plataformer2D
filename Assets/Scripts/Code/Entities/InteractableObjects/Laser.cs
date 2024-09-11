@@ -9,6 +9,9 @@ public class Laser : MonoBehaviour
 
     private GameObject shotPoint;
 
+    public bool CollidedWithEnemy { private set; get; }
+    [SerializeField] private LayerMask enemiesLayer;
+
     private void Awake()
     {
         objAnim = GetComponent<Animator>();
@@ -27,9 +30,6 @@ public class Laser : MonoBehaviour
 
         objAnim.SetTrigger("ShotFired");
         Invoke(nameof(OnShotEnd), 5f);
-
-        Debug.Log(playerDir.PlayerRotation);
-        Debug.Log(lastDir);
     }
 
     private void OnDisable()
@@ -45,5 +45,18 @@ public class Laser : MonoBehaviour
     private void OnShotEnd()
     {
         gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        RaycastHit2D hit2D = Physics2D.Raycast(transform.position, transform.forward, 0.2f, enemiesLayer);
+
+        if (hit2D)
+        {
+            var enemy = hit2D.collider.gameObject;
+            enemy.GetComponent<EnemyBase>().OnDamageTaken();
+
+            Invoke(nameof(OnShotEnd), 0.2f);
+        }
     }
 }

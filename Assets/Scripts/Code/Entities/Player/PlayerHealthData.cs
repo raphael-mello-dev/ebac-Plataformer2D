@@ -35,6 +35,6 @@ public class PlayerHealthData : ScriptableObject
     public void OnKilled()
     {
         Debug.Log("Game Over");
-        //Destroy(GameObject.FindAnyObjectByType<PlayerController>().gameObject, 1.5f);
+        Destroy(GameObject.FindAnyObjectByType<PlayerController>().gameObject, 1.5f);
     }
 }
