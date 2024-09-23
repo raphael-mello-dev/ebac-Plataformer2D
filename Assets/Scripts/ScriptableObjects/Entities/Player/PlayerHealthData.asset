@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeccea925fd2a04cbc254f291b376c6, type: 3}
   m_Name: PlayerHealthData
   m_EditorClassIdentifier: 
-  numOfLifes: 2
+  numOfLifes: 1
   _maxHealth: 10
-  _currentHealth: 8
+  _currentHealth: 10
   OnPlayerKilled: {fileID: 11400000, guid: 089e9c70cc252994fb4c7be7798c32c0, type: 2}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PlayerData")]
@@ -15,6 +16,8 @@ public class PlayerHealthData : ScriptableObject
     public int _currentHealth;
 
     private int damage;
+
+    public event Action OnlifesTextDisplayed;
 
     public GameEvent OnPlayerKilled;
 
@@ -34,6 +37,13 @@ public class PlayerHealthData : ScriptableObject
         {
             _currentHealth -= damage;
             Debug.Log($"Max Health: {_maxHealth} / Current Health: {_currentHealth}");
+        }
+        else if (numOfLifes > 0)
+        {
+            numOfLifes--;
+            _currentHealth = _maxHealth;
+            OnlifesTextDisplayed?.Invoke();
+
         }
         else
             OnPlayerKilled.RaiseEvent();

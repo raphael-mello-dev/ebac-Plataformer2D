@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -17,6 +15,8 @@ public class HUDManager : MonoBehaviour
     {
         _coinsAmount = 0;
         _coinsTextDisplay.text = "X 00";
+
+        playerHealthData.OnlifesTextDisplayed += LifeCollectedDisplay;
 
         if (playerHealthData.NumOfLifes < 10)
             _lifesTextDisplay.text = $"X 0{playerHealthData.NumOfLifes}";
