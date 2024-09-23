@@ -5,30 +5,25 @@ using TMPro;
 
 public class HUDManager : MonoBehaviour
 {
-    #region Coin text reference
+    public PlayerHealthData playerHealthData;
+
+    [SerializeField] private TextMeshProUGUI _lifesTextDisplay;
 
     [SerializeField] private TextMeshProUGUI _coinsTextDisplay;
 
-    #endregion
-
-    #region Number of coins gathered
-
     [SerializeField] private int _coinsAmount;
-
-    #endregion
-
-    #region HUD Display Setup
 
     private void Start()
     {
         _coinsAmount = 0;
         _coinsTextDisplay.text = "X 00";
+
+        if (playerHealthData.NumOfLifes < 10)
+            _lifesTextDisplay.text = $"X 0{playerHealthData.NumOfLifes}";
+        else
+            _lifesTextDisplay.text = $"X {playerHealthData.NumOfLifes}";
     }
-
-    #endregion
-
-    #region Function to display gathered coins
-
+    
     public void CoinCollectedDisplay(Component sender, object data)
     {
         if (data is int)
@@ -47,5 +42,11 @@ public class HUDManager : MonoBehaviour
             _coinsTextDisplay.text = $"X {_coinsAmount}";
     }
 
-    #endregion
+    public void LifeCollectedDisplay()
+    {
+        if (playerHealthData.NumOfLifes < 10)
+            _lifesTextDisplay.text = $"X 0{playerHealthData.NumOfLifes}";
+        else
+            _lifesTextDisplay.text = $"X {playerHealthData.NumOfLifes}";
+    }
 }

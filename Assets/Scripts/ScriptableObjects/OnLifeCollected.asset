@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feeccea925fd2a04cbc254f291b376c6, type: 3}
-  m_Name: PlayerHealthData
+  m_Script: {fileID: 11500000, guid: 4736b4b1d98f4b14592c92481be5d389, type: 3}
+  m_Name: OnLifeCollected
   m_EditorClassIdentifier: 
-  numOfLifes: 2
-  _maxHealth: 10
-  _currentHealth: 8
-  OnPlayerKilled: {fileID: 11400000, guid: 089e9c70cc252994fb4c7be7798c32c0, type: 2}
+  listeners:
+  - {fileID: 0}

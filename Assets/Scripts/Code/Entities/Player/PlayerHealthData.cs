@@ -3,6 +3,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PlayerData")]
 public class PlayerHealthData : ScriptableObject
 {
+    [SerializeField] private int numOfLifes;
+    public int NumOfLifes
+    {
+        get {  return numOfLifes; }
+        private set {  NumOfLifes = numOfLifes; }
+    }
+
     public int _maxHealth;
 
     public int _currentHealth;
@@ -36,5 +43,10 @@ public class PlayerHealthData : ScriptableObject
     {
         Debug.Log("Game Over");
         Destroy(GameObject.FindAnyObjectByType<PlayerController>().gameObject, 1.5f);
+    }
+
+    public void OnLifeCollected()
+    {
+        numOfLifes++;
     }
 }
