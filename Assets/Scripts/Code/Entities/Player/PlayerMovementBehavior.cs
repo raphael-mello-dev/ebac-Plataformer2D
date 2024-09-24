@@ -11,6 +11,15 @@ public class PlayerMovementBehavior : PlayerController
 
     #endregion
 
+    private void Start()
+    {
+        if (playerSetup.isSetupOn)
+        {
+            _speed = playerSetup.speed;
+            _runSpeed = playerSetup.runSpeed;
+        }
+    }
+
     #region Movement update
 
     void Update()

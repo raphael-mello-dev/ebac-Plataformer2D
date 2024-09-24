@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    protected PlayerSetup playerSetup;
+
     protected PlayerInputManager inputManagerInstance;
 
     protected Animator _playerAnim;
@@ -16,5 +18,11 @@ public class PlayerController : MonoBehaviour
     {
         inputManagerInstance = new PlayerInputManager();
         _playerAnim = GetComponent<Animator>();
+        playerSetup = Resources.Load<PlayerSetup>("Setup");
+    }
+
+    private void Start()
+    {
+        Debug.Log(playerSetup.isSetupOn);
     }
 }

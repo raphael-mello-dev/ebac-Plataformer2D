@@ -17,6 +17,11 @@ public class PlayerJumpBehavior : PlayerController
     private void Start()
     {
         inputManagerInstance.OnJump += OnJump;
+
+        if (playerSetup.isSetupOn)
+        {
+            _jumpForce = playerSetup.jumpForce;
+        }
     }
 
     private void OnJump()
