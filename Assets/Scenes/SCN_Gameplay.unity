@@ -862,6 +862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPR_Coin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1341959973117515015, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 22313372}
     - target: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.46
@@ -994,6 +998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPR_Coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1341959973117515015, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 22313372}
     - target: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.25
@@ -1140,6 +1148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPR_Coin (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1341959973117515015, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 22313372}
     - target: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
       propertyPath: m_LocalPosition.x
       value: -76.9
@@ -1694,6 +1706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPR_Coin (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1341959973117515015, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 22313372}
     - target: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
       propertyPath: m_LocalPosition.x
       value: -89.2
@@ -2768,6 +2784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPR_Coin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1341959973117515015, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 22313372}
     - target: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
       propertyPath: m_LocalPosition.x
       value: -70.7
@@ -2818,69 +2838,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
   m_PrefabInstance: {fileID: 1157260085}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1157272263
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1157272264}
-  - component: {fileID: 1157272265}
-  m_Layer: 0
-  m_Name: HUDEventManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1157272264
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157272263}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1296820500}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1157272265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157272263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4166feb03b26ac54388fe76ff16bebe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: bdf37f38da4a75b4382d9b05106a4212, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
-  customResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 22313372}
-        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
-        m_MethodName: CoinCollectedDisplay
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1179179839
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3462,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 841024380}
-  - {fileID: 1157272264}
   - {fileID: 753023443}
   m_Father: {fileID: 1279934517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4718,6 +4674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPR_Coin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1341959973117515015, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 22313372}
     - target: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
       propertyPath: m_LocalPosition.x
       value: -83.1
@@ -5897,6 +5857,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SPR_Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 1341959973117515015, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 22313372}
     - target: {fileID: 6446280673128111611, guid: d5cb8f42ea5931448b2e211aad9ed741, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.4866257

@@ -1,10 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectableCoin : MonoBehaviour
 {
-    public GameEvent OnCoinCollected;
+    public event Action OnCoinCollected;
+
+    public HUDManager hudManager;
+
+    private void Start()
+    {
+        OnCoinCollected += hudManager.CoinCollectedDisplay;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,7 +22,7 @@ public class CollectableCoin : MonoBehaviour
 
     private void Collect()
     {
-        OnCoinCollected.RaiseEvent(this, 1);
+        OnCoinCollected?.Invoke();
         Destroy(gameObject);
     }
 }

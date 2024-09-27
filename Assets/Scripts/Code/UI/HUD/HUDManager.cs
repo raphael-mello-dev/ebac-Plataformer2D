@@ -24,17 +24,9 @@ public class HUDManager : MonoBehaviour
             _lifesTextDisplay.text = $"X {playerHealthData.NumOfLifes}";
     }
     
-    public void CoinCollectedDisplay(Component sender, object data)
+    public void CoinCollectedDisplay()
     {
-        if (data is int)
-        {
-            _coinsAmount += (int)data;
-        }
-        else
-        {
-            Debug.LogError("Data needs to be a int");
-            return;
-        }
+        _coinsAmount++;
 
         if (_coinsAmount < 10)
             _coinsTextDisplay.text = $"X 0{_coinsAmount}";

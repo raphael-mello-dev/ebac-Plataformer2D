@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44c9cbe5a249244bac02992f108a43, type: 3}
   m_Name: Setup
   m_EditorClassIdentifier: 
-  isSetupOn: 0
+  isSetupOn: 1
   speed: 7
   runSpeed: 21
   jumpForce: 15
