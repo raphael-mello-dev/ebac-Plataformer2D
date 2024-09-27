@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd44c9cbe5a249244bac02992f108a43, type: 3}
-  m_Name: Setup
+  m_Name: Setup02
   m_EditorClassIdentifier: 
-  isSetupOn: 0
-  speed: 7
-  runSpeed: 21
-  jumpForce: 15
+  isSetupOn: 1
+  speed: 3.5
+  runSpeed: 10.5
+  jumpForce: 7.5
