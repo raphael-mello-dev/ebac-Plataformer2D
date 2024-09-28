@@ -4,10 +4,14 @@ public class PlayerMovementBehavior : PlayerController
 {
     #region Movement variables
 
+    private PlayerJumpBehavior playerJump;
+
     private Vector2 movement;
 
     [SerializeField] private float _speed;
     [SerializeField] private float _runSpeed;
+
+    [SerializeField] private ParticleSystem runParticle;
 
     #endregion
 
@@ -18,6 +22,8 @@ public class PlayerMovementBehavior : PlayerController
             _speed = playerSetup.speed;
             _runSpeed = playerSetup.runSpeed;
         }
+
+        playerJump = gameObject.GetComponent<PlayerJumpBehavior>();
     }
 
     #region Movement update
@@ -44,9 +50,18 @@ public class PlayerMovementBehavior : PlayerController
                     _playerAnim.SetInteger("playerActions", 1);
 
                 transform.position += new Vector3(movement.x, 0, 0) * _speed * Time.deltaTime;
+
+                if(runParticle.isPlaying)
+                    runParticle.Stop();
             }
             else
             {
+                if (!playerJump.IsJumping && !runParticle.isPlaying)
+                    runParticle.Play();
+                else if (playerJump.IsJumping && runParticle.isPlaying)
+                    runParticle.Stop();
+
+
                 if (_playerAnim.GetInteger("playerActions") != 2)
                     _playerAnim.SetInteger("playerActions", 2);
 
@@ -57,6 +72,9 @@ public class PlayerMovementBehavior : PlayerController
         {
             if (_playerAnim.GetInteger("playerActions") != 0)
                 _playerAnim.SetInteger("playerActions", 0);
+            
+            if (inputManagerInstance.isRunning < 0.5f && runParticle.isPlaying)
+                runParticle.Stop();
         }
     }
 
