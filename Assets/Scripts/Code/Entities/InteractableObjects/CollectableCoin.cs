@@ -8,6 +8,8 @@ public class CollectableCoin : MonoBehaviour
     public event Action OnCoinCollected;
 
     public HUDManager hudManager;
+    [SerializeField] private ParticleSystem coinParticle;
+    [SerializeField] private SpriteRenderer coinRenderer;
 
     private void Start()
     {
@@ -22,7 +24,18 @@ public class CollectableCoin : MonoBehaviour
 
     private void Collect()
     {
-        OnCoinCollected?.Invoke();
-        Destroy(gameObject);
+        if (coinRenderer.sprite != null)
+        {
+            OnCoinCollected?.Invoke();
+            StartCoroutine(nameof(CoinCollected));
+        }        
     }
+
+    private IEnumerator CoinCollected()
+    {
+        coinParticle.Play();
+        coinRenderer.sprite = null;
+        yield return new WaitForSecondsRealtime(3f);
+        Destroy(gameObject);
+    } 
 }
