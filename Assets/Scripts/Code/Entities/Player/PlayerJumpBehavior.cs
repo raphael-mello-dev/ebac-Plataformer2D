@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerJumpBehavior : PlayerController
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private ParticleSystem jumpParticle;
+    [SerializeField] private AudioSource jumpSound;
 
     public bool IsJumping { get; private set; }
 
@@ -33,6 +32,7 @@ public class PlayerJumpBehavior : PlayerController
         rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         _playerAnim.SetTrigger("IsJumping");
         jumpParticle.Play();
+        jumpSound.Play();
         IsJumping = true;
     }
 

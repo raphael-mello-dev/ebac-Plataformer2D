@@ -10,6 +10,7 @@ public class CollectableCoin : MonoBehaviour
     public HUDManager hudManager;
     [SerializeField] private ParticleSystem coinParticle;
     [SerializeField] private SpriteRenderer coinRenderer;
+    [SerializeField] private AudioSource coinCollectSound;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class CollectableCoin : MonoBehaviour
     private IEnumerator CoinCollected()
     {
         coinParticle.Play();
+        coinCollectSound.Play();
         coinRenderer.sprite = null;
         yield return new WaitForSecondsRealtime(3f);
         Destroy(gameObject);

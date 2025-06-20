@@ -12,6 +12,7 @@ public class PlayerMovementBehavior : PlayerController
     [SerializeField] private float _runSpeed;
 
     [SerializeField] private ParticleSystem runParticle;
+    [SerializeField] private AudioSource walkSound;
 
     #endregion
 
@@ -77,6 +78,8 @@ public class PlayerMovementBehavior : PlayerController
                 runParticle.Stop();
         }
     }
+
+    public void PlayWalkSound() { walkSound.Play(); }
 
     #endregion
 }
